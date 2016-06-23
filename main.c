@@ -1,18 +1,16 @@
 #include <GL/glut.h>
-#include "car.h"
+#include "casa.h"
 
 int main(int argc, char **argv) {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     glutInitWindowSize(1280, 720);
-    glutInitWindowPosition(20, 20);
-    glutCreateWindow("ObjLoader");
+    glutInitWindowPosition(0, 0);
+    glutCreateWindow("Casa Número 0");
     glutReshapeFunc(reshape);
     glutDisplayFunc(display);
     glutIdleFunc(display);
-    // loadObj("monkey.obj");
-    // loadObj("Bugatti-Veyron.obj");
-    loadObj("robot2.obj");
+    loadObj("casa.obj");
     glutMainLoop();
     return 0;
 }

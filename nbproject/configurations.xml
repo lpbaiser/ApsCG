@@ -4,7 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>car.h</itemPath>
+      <itemPath>casa.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -13,7 +13,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>car.c</itemPath>
+      <itemPath>casa.c</itemPath>
       <itemPath>main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -44,9 +44,9 @@
           <standard>3</standard>
         </cTool>
       </compileType>
-      <item path="car.c" ex="false" tool="0" flavor2="0">
+      <item path="casa.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="car.h" ex="false" tool="3" flavor2="0">
+      <item path="casa.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -72,9 +72,9 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="car.c" ex="false" tool="0" flavor2="0">
+      <item path="casa.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="car.h" ex="false" tool="3" flavor2="0">
+      <item path="casa.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
