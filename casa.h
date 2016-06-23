@@ -3,7 +3,10 @@
 #include <GL/gl.h>
 
 GLuint glGenList;
-float rotate;
+GLfloat rotate;
+GLdouble obsX, obsY, obsZ;
+
+void SpecialKeys(int key, int x, int y);
 
 /**
  * Carrega objeto.
