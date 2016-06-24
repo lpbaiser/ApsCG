@@ -8,9 +8,11 @@ void SpecialKeys(int key, int x, int y) {
     switch (key) {
         case GLUT_KEY_LEFT:
             obsX -= 0.2;
+            obsZ += 0.2;
             break;
         case GLUT_KEY_RIGHT:
             obsX += 0.2;
+            obsZ -= 0.2;
             break;
         case GLUT_KEY_UP:
             obsY += 0.2;
@@ -67,7 +69,7 @@ void loadObj(char *fname) {
             } else if (!strcmp(line, "f")) {
                 read = fscanf(fp, "%d %d, %d, %d", &f1, &f2, &f3, &f4);
                 //                read = fscanf(fp, "%d/%d %d/%d %d/%d %d/%d", &f1, &f2, &f3, &f4);
-//                printf("%d/%d\n", f1, f2);
+                //                printf("%d/%d\n", f1, f2);
                 if (read == 3) {
                     glNormal3i(f1, f2, f3);
                 }
@@ -103,6 +105,19 @@ void drawHouse() {
     }
 }
 
+void drawFloor() {
+    glPushMatrix();
+    glColor3f(0, 1, 0);
+    glBegin(GL_QUADS);
+    glVertex3f(-5, -0.5, 5);
+    glVertex3f(5, -0.5, 5);
+    glVertex3f(5, -0.5, -5);
+    glVertex3f(-5, -0.5, -5);
+    glEnd();
+    glCallList(glGenList);
+    glPopMatrix();
+}
+
 void display() {
     glClearColor(0.0, 0.0, 0.0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -111,5 +126,6 @@ void display() {
             0, 0, 0,
             0, 1, 0);
     drawHouse();
-    glutSwapBuffers(); //swap the buffers
+    drawFloor();
+    glutSwapBuffers();
 }
