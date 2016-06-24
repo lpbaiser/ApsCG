@@ -1,9 +1,8 @@
 #include <GL/gl.h>
 #include <GL/glut.h>
 #include <stdio.h>
+#include <string.h>
 #include "casa.h"
-
-char ch = '1';
 
 void SpecialKeys(int key, int x, int y) {
     switch (key) {
@@ -29,12 +28,23 @@ void SpecialKeys(int key, int x, int y) {
     glutPostRedisplay();
 }
 
+struct {
+    int a;
+} Face;
+
+struct {
+    GLfloat x;
+    GLfloat y;
+    GLfloat z;
+} Vertice;
+
 void loadObj(char *fname) {
     FILE *fp;
     int read;
     GLfloat x, y, z;
     GLint f1, f2, f3, f4;
     glGenList = glGenLists(1);
+    char* line = (char*) calloc(128, sizeof (char));
     fp = fopen(fname, "r");
     if (!fp) {
         printf("can't open file %s\n", fname);
@@ -47,14 +57,20 @@ void loadObj(char *fname) {
         glBegin(GL_POINTS);
         while (!(feof(fp))) {
             //            read = fscanf(fp, "%c %f %f %f", &ch, &x, &y, &z);
-            read = fscanf(fp, "%c ", &ch);
-            if (ch == 'v') {
+            read = fscanf(fp, "%s", line);
+            printf("%s\n", line);
+            if (!strcmp(line, "v")) {
                 read = fscanf(fp, "%f %f %f", &x, &y, &z);
                 glVertex3f(x, y, z);
-            } else if (ch == 'f') {
-                read = fscanf(fp, "%d/ %d/ %d/ %d/", &f1, &f2, &f3, &f4);
-                glNormal3i(f1, f2, f3);
-                printf("HEre");
+            } else if (!strcmp(line, "vt")) {
+                printf("vt");
+            } else if (!strcmp(line, "f")) {
+                read = fscanf(fp, "%d %d, %d, %d", &f1, &f2, &f3, &f4);
+                //                read = fscanf(fp, "%d/%d %d/%d %d/%d %d/%d", &f1, &f2, &f3, &f4);
+//                printf("%d/%d\n", f1, f2);
+                if (read == 3) {
+                    glNormal3i(f1, f2, f3);
+                }
             }
         }
         glEnd();
