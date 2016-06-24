@@ -11,11 +11,13 @@ int main(int argc, char **argv) {
     obsX = 5;
     obsY = 5;
     obsZ = 5;
-    
+
     glutSpecialFunc(SpecialKeys);
     glutReshapeFunc(reshape);
     glutDisplayFunc(display);
     glutIdleFunc(display);
+    //    principal();
+    //    Inicializa();
     loadObj("casa.obj");
     glutMainLoop();
     return 0;
