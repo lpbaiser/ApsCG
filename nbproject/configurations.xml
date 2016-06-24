@@ -5,6 +5,8 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>casa.h</itemPath>
+      <itemPath>iluminacao.h</itemPath>
+      <itemPath>testeQuadrado.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -15,6 +17,7 @@
                    projectFiles="true">
       <itemPath>casa.c</itemPath>
       <itemPath>main.c</itemPath>
+      <itemPath>testeQuadrado.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -48,7 +51,13 @@
       </item>
       <item path="casa.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="iluminacao.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="testeQuadrado.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="testeQuadrado.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -76,7 +85,13 @@
       </item>
       <item path="casa.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="iluminacao.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="testeQuadrado.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="testeQuadrado.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

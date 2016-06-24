@@ -1,5 +1,6 @@
 #include <GL/glut.h>
 #include "casa.h"
+#include "testeQuadrado.h"
 
 int main(int argc, char **argv) {
     glutInit(&argc, argv);
@@ -8,9 +9,11 @@ int main(int argc, char **argv) {
     glutInitWindowPosition(0, 0);
     glutCreateWindow("Casa Número 0");
     glutReshapeFunc(reshape);
-    glutDisplayFunc(display);
-    glutIdleFunc(display);
-    loadObj("casa.obj");
+//    glutDisplayFunc(display);
+//    glutIdleFunc(display);
+    principal();
+//    Inicializa();
+//    loadObj("casa.obj");
     glutMainLoop();
     return 0;
 }
